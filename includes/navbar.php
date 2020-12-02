@@ -27,7 +27,6 @@
                                 $catid=$row['catID'];
                                 echo "<li><a href='itemlist.php?catName={$cat}'>{$cat}</a></li>";
                             }
-
                             /* 
                             <li><a href="#">Jewellery</a></li>
                             <li><a href="#">Jewellery</a></li>

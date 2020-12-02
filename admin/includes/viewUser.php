@@ -2,6 +2,8 @@
     <h4><b>Users</b></h4>
     <a href='users.php?source=addUser'>
     <button class='btn btn-primary btn-sm'><span class='glyphicon glyphicon-plus'></span> Add User</button></a></td>
+    <a href='../admin/report.php'>
+    <button class='btn btn-primary btn-sm'><span class='glyphicon glyphicon-file'></span> Generate User Details</button></a></td>
 </div>
 
 <table class="table table-striped table-hover">
