@@ -1,6 +1,14 @@
 <?php   include "includes/header.php" ?>
 <body>
     <?php   include "includes/navbar.php" ?>
+    <?php 
+        if(isset($_GET['message'])){
+            echo "<div class='container alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>x
+            </a>Logout Successfully</div>";
+        }
+    
+    
+    ?>
 
     <div class="container">
         <div class="col-md-8">

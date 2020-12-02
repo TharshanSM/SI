@@ -1,6 +1,7 @@
 <?php   include "includes/header.php" ?>
 <?php   include "includes/db.php" ?>
 
+
 <body>
     <div class="container">
     <?php 
@@ -41,22 +42,29 @@
     }  
 
     ?>
-        <div class="page-header">
-            <h4><b>Sign in to start your session</b></h4>
+    <div class="page-header">
+        <?php 
+            if(isset($_GET['message'])){
+            echo "<div class='container alert alert-success'><a href='#' class='close' data-dismiss='alert' aria-label='close'>x
+            </a>Registered Successfully Login to Proceed</div>";
+            }else{
+                echo "<h4><b>Sign in to start your session</b></h4>";
+            }
+        ?>
         </div>
-
+        
         <div class="col-md-5 col-md-offset-3">
             <form action="" method="post" class="form-horizontal">
 
                 <div class="form-group has-feedback">
                     <label for="">Username</label>
-                    <input type="text" name="txtUsername" id="" class="form-control">
+                    <input type="text" name="txtUsername" id="" class="form-control" required>
                     <span class="glyphicon glyphicon-envelope form-control-feedback">
                 </div>
 
                 <div class="form-group has-feedback">
                     <label for="">Password</label>
-                    <input type="password" name="txtPassword" id="" class="form-control">
+                    <input type="password" name="txtPassword" id="" class="form-control" required>
                     <span class="glyphicon glyphicon-lock form-control-feedback">
                 </div>
 
