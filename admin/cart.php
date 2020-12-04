@@ -1,4 +1,11 @@
 <?php   include "includes/adminheader.php" ?>
+<?php 
+
+
+
+
+
+?>
 
 <body>
     <?php include "includes/adminNavbar.php"  ?>
@@ -12,8 +19,9 @@
             <table class="table table-striped table-hover">
             <thead>
                 <tr class="success">
+                    <th>User ID</th>
                     <th>User Name</th>
-                    <th>Product ID</th>
+                    <th>Product Name</th>
                     <th>Quantity</th>
                 </tr>
             </thead>
@@ -30,10 +38,11 @@
                         $quantity=$row['quantity'];
                         echo "<tr>";
                         echo "<td>{$user_id}</td>";
+                        echo "<td>{$user_id}</td>";
                         echo "<td>{$product_id}</td>";
                         echo "<td>{$quantity}</td>";
                         //get method to make publish and draft
-                        echo "<td><a href='cart.php?sendmessage={$user_id}'><button class='btn btn-info btn-sm'>Send Message</button></a>";
+                        echo "<td><a href='cart.php?sendmessage={$user_id}'><button class='btn btn-success btn-sm'>Send Reply</button></a>";
                         echo "</tr>";
                     }
                 ?>

@@ -57,7 +57,32 @@ if(isset($_POST['btnAddCart'])){
             echo "<div class='container alert alert-danger'><a href='#' class='close' data-dismiss='alert' aria-label='close'>x</a>Item Already in Cart</div>";
         }else{
             $userid=$_SESSION['userID'];
-            $query="INSERT INTO `cart`(`cart_userid`, `cart_itemid`, `quantity`) VALUES ('{$userid}','{$_GET['itemid']}','{$_POST['txtQty']}')";
+            $itemid=$_GET['itemid'];
+
+            //add userdetails in cart
+            $query="SELECT * FROM `user` WHERE `userID`='$userid'";
+            $result=mysqli_query($connect,$query);
+            if(!$result){
+                die("Query Failed".mysqli_error());
+            }
+            while($row=mysqli_fetch_assoc($result)){
+                $uname=$row['username'];
+            }
+
+            //add itemdetails in cart
+            $query="SELECT * FROM `item` WHERE `itemID`='$itemid'";
+            $result=mysqli_query($connect,$query);
+            if(!$result){
+                die("Query Failed".mysqli_error());
+            }
+            while($row=mysqli_fetch_assoc($result)){
+                $item_name=$row['itemName'];
+                $item_price=$row['itemPrice'];
+            }
+
+
+            $query="INSERT INTO `cart`(`cart_userid`, `cart_username`, `cart_itemid`, `cart_itemname`, `cart_itemprice`, `quantity`) 
+            VALUES ('$userid','$uname','$itemid','$item_name','$item_price','{$_POST['txtQty']}')";
             $result=mysqli_query($connect,$query);
             if(!$result){
                 die("Query Failed".mysqli_error());

@@ -79,7 +79,20 @@
                     <?php }?>    
                 </tbody>
             </table>
-            <h4>You need to <a href="login.php">Login</a> to checkout.</h4>
+
+            <?php 
+                if(!isset($_SESSION['userID'])){
+                    echo "<h4>You need to <a href='login.php'>Login</a> to Proceed.</h4>"; 
+                }else{
+                    echo "<h4>Generate<a href='User_FPDF/ex.php?userid={$userid}'> Invoie</a></h4>";
+                }
+            ?>
+
+
+
+
+
+            
         </div>
 
         <?php removeCart()?>
