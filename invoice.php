@@ -9,7 +9,7 @@
             $this->Cell(276,5,"User Details",0,0,'C');
             $this->Ln();
             $this->SetFont('Times','',12);
-            $this->Cell(276,10,"Surprise Insight",0,0,'C');
+            $this->Cell(276,10,"Surprise Inside",0,0,'C');
             $this->Ln(20);
         }
 

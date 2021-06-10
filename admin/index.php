@@ -1,5 +1,15 @@
 <?php   include "../includes/db.php" ?>
+
 <?php 
+
+    //to prevent from url directly access
+    if(!isset($_SERVER['HTTP_REFERER'])){
+        // redirect them to your desired location
+         header('location:../index.php');
+        exit;
+    }
+
+
     if(isset($_POST['btnSubmit'])){
         header("Location: ../index.php?message=LogOut Successfully");
     }

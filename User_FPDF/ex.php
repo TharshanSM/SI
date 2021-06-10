@@ -6,14 +6,14 @@ $db=new PDO("mysql:host=localhost;dbname=si", 'root', '');
 
 $pdf = new PDF_Invoice( 'P', 'mm', 'A4' );
 $pdf->AddPage();
-$pdf->addSociete( "Surprise Insight",
+$pdf->addSociete( "Surprise Inside",
                   "Address\n" .
                   "No 87A\n".
                   "Colombo 6\n" .
                   "Western Province\n".
                   "Srilanka");
 $pdf->fact_dev( "Invoice");
-$pdf->temporaire( "Surprise Insight" );
+$pdf->temporaire( "Surprise Inside" );
 
 date_default_timezone_set('Asia/Colombo');
 $currentdate = date("m-d-Y");
